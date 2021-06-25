@@ -42,7 +42,7 @@ PRIOR_FILTER         28                 # Filter from FILTER_RES corresponding t
 PRIOR_ABZP           25.000             # AB zeropoint of fluxes in catalog.  Needed for calculating apparent mags!
 
 ## Redshift Grid
-FIX_ZSPEC            1                  # Fix redshift to catalog zspec
+FIX_ZSPEC            0                  # Fix redshift to catalog zspec
 Z_MIN                0.010              # Minimum redshift
 Z_MAX                6.000              # Maximum redshift
 Z_STEP               0.010              # Redshift step size
@@ -88,4 +88,4 @@ OMEGA_L              0.700              # Omega_lambda
 #  Template 6: templates/EAZY_v1.0/eazy_v1.0_sed6.dat
 #     1.000000   0.000000   1.000000
 # EAZY v1.00 (July 9, 2008)
-# Took 1 seconds.
+# Took 23 seconds.
