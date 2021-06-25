@@ -1,0 +1,195 @@
+################   Run parameters (can feed this file back to EAZY)  ####################
+## Filters
+FILTERS_RES          master.FILTER.RES  # Filter transmission data
+FILTER_FORMAT        1                  # Format of FILTERS_RES file -- 0: energy-  1: photon-counting detector
+SMOOTH_FILTERS       1                  # Smooth filter curves with Gaussian
+SMOOTH_SIGMA         100.00             # Gaussian sigma (in Angstroms) to smooth filters
+
+## Templates
+TEMPLATES_FILE       templates/eazy_v1.0.spectra.param # Template definition file
+TEMPLATE_COMBOS      99                 # Template combination options: 
+NMF_TOLERANCE        1.00e-04           # Tolerance for non-negative combinations (TEMPLATE_COMBOS=a)
+WAVELENGTH_FILE      templates/lambda.def # Wavelength grid definition file
+TEMP_ERR_FILE        templates/TEMPLATE_ERROR.eazy_v1.0 # Template error definition file
+TEMP_ERR_A2          1.000              # Template error amplitude
+SYS_ERR              0.000              # Systematic flux error (% of flux)
+APPLY_IGM            1                  # Apply Madau 1995 IGM absorption
+
+DUMP_TEMPLATE_CACHE  0                  # Write binary template cache
+USE_TEMPLATE_CACHE   0                  # Load in template cache
+CACHE_FILE           tempfilt.dat       # Template cache file (in OUTPUT_DIRECTORY)
+
+## Input Files
+CATALOG_FILE         mock_cat_new_2.cat # Catalog data file
+NOT_OBS_THRESHOLD    -90.000            # Ignore flux point if <NOT_OBS_THRESH
+N_MIN_COLORS         3                  # Require N_MIN_COLORS to fit
+
+## Output Files
+OUTPUT_DIRECTORY     OUTPUT             # Directory to put output files in
+MAIN_OUTPUT_FILE     photz              # Main output file, .zout
+PRINT_ERRORS         1                  # Print 68, 95 and 99% confidence intervals
+CHI2_SCALE           1.000              # Scale ML Chi-squared values to improve confidence intervals
+VERBOSE_LOG          1                  # Dump information from the run into [MAIN_OUTPUT_FILE].param
+OBS_SED_FILE         1                  # Write out observed SED/object, .obs_sed
+TEMP_SED_FILE        1                  # Write out best template fit/object, .temp_sed
+POFZ_FILE            1                  # Write out Pofz/object, .pz
+BINARY_OUTPUT        1                  # Save OBS_SED, TEMP_SED, PZ in binary format to read with e.g IDL
+
+## Redshift / Mag prior
+APPLY_PRIOR          0                  # Apply apparent magnitude prior
+PRIOR_FILE           prior_K_zmax7.dat  # File containing prior grid
+PRIOR_FILTER         28                 # Filter from FILTER_RES corresponding to the columns in PRIOR_FILE
+PRIOR_ABZP           25.000             # AB zeropoint of fluxes in catalog.  Needed for calculating apparent mags!
+
+## Redshift Grid
+FIX_ZSPEC            1                  # Fix redshift to catalog zspec
+Z_MIN                0.010              # Minimum redshift
+Z_MAX                6.000              # Maximum redshift
+Z_STEP               0.010              # Redshift step size
+Z_STEP_TYPE          1                  #  0 = ZSTEP, 1 = Z_STEP*(1+z)
+
+## Zeropoint Offsets
+GET_ZP_OFFSETS       0                  # Look for zphot.zeropoint file and compute zeropoint offsets
+ZP_OFFSET_TOL        1.000e-04          # Tolerance for iterative fit for zeropoint offsets
+
+## Cosmology
+H0                   70.000             #  Hubble constant
+OMEGA_M              0.300              # Omega_matter
+OMEGA_L              0.700              # Omega_lambda
+#
+####################################
+#
+# Smoothing filters with gaussian sig=100.000000 A.
+#
+#  Filter #1, RES#30: J0670 - lambda_c=6713.290301
+#       [flux col: 1, error col.: 2]
+#  Filter #2, RES#31: J0680 - lambda_c=6811.003849
+#       [flux col: 3, error col.: 4]
+#  Filter #3, RES#32: J0690 - lambda_c=6916.387841
+#       [flux col: 5, error col.: 6]
+#  Filter #4, RES#33: J0700 - lambda_c=7008.694402
+#       [flux col: 7, error col.: 8]
+#  Filter #5, RES#34: J0710 - lambda_c=7122.004291
+#       [flux col: 9, error col.: 10]
+#  Filter #6, RES#35: J0720 - lambda_c=7212.180407
+#       [flux col: 11, error col.: 12]
+#  Filter #7, RES#36: J0730 - lambda_c=7312.290510
+#       [flux col: 13, error col.: 14]
+#  Filter #8, RES#37: J0740 - lambda_c=7416.230621
+#       [flux col: 15, error col.: 16]
+#  Filter #9, RES#38: J0750 - lambda_c=7501.936757
+#       [flux col: 17, error col.: 18]
+#  Filter #10, RES#39: J0760 - lambda_c=7599.610672
+#       [flux col: 19, error col.: 20]
+#  Filter #11, RES#40: J0770 - lambda_c=7720.781731
+#       [flux col: 21, error col.: 22]
+#  Filter #12, RES#41: J0780 - lambda_c=7808.265971
+#       [flux col: 23, error col.: 24]
+#  Filter #13, RES#42: J0790 - lambda_c=7960.333088
+#       [flux col: 25, error col.: 26]
+#  Filter #14, RES#43: J0800 - lambda_c=8007.172108
+#       [flux col: 27, error col.: 28]
+#  Filter #15, RES#44: J0810 - lambda_c=8114.397074
+#       [flux col: 29, error col.: 30]
+#  Filter #16, RES#45: J0820 - lambda_c=8216.827478
+#       [flux col: 31, error col.: 32]
+#  Filter #17, RES#46: J0830 - lambda_c=8318.926684
+#       [flux col: 33, error col.: 34]
+#  Filter #18, RES#47: J0840 - lambda_c=8373.407261
+#       [flux col: 35, error col.: 36]
+#  Filter #19, RES#48: J0850 - lambda_c=8509.173991
+#       [flux col: 37, error col.: 38]
+#  Filter #20, RES#49: J0860 - lambda_c=8598.171259
+#       [flux col: 39, error col.: 40]
+#  Filter #21, RES#50: J0870 - lambda_c=8675.845838
+#       [flux col: 41, error col.: 42]
+#  Filter #22, RES#51: J0880 - lambda_c=8819.134159
+#       [flux col: 43, error col.: 44]
+#  Filter #23, RES#52: J0890 - lambda_c=8910.584409
+#       [flux col: 45, error col.: 46]
+#  Filter #24, RES#53: J0900 - lambda_c=9003.366677
+#       [flux col: 47, error col.: 48]
+#  Filter #25, RES#54: J0910 - lambda_c=9095.995008
+#       [flux col: 49, error col.: 50]
+#  Filter #26, RES#55: J1007 - lambda_c=9597.014695
+#       [flux col: 51, error col.: 52]
+#  Filter #27, RES#56: gSDSS - lambda_c=4787.657546
+#       [flux col: 53, error col.: 54]
+#  Filter #28, RES#57: iSDSS - lambda_c=7668.941767
+#       [flux col: 55, error col.: 56]
+#  Filter #29, RES#58: rSDSS - lambda_c=6260.748675
+#       [flux col: 57, error col.: 58]
+#  Filter #30, RES#59: u - lambda_c=3784.049425
+#       [flux col: 59, error col.: 60]
+#  Filter #31, RES#10: J0470 - lambda_c=4705.246372
+#       [flux col: 61, error col.: 62]
+#  Filter #32, RES#12: J0490 - lambda_c=4906.977614
+#       [flux col: 63, error col.: 64]
+#  Filter #33, RES#13: J0500 - lambda_c=5005.964417
+#       [flux col: 65, error col.: 66]
+#  Filter #34, RES#14: J0510 - lambda_c=5096.439295
+#       [flux col: 67, error col.: 68]
+#  Filter #35, RES#15: J0520 - lambda_c=5208.608672
+#       [flux col: 69, error col.: 70]
+#  Filter #36, RES#16: J0530 - lambda_c=5304.235881
+#       [flux col: 71, error col.: 72]
+#  Filter #37, RES#17: J0540 - lambda_c=5397.527429
+#       [flux col: 73, error col.: 74]
+#  Filter #38, RES#18: J0550 - lambda_c=5502.284853
+#       [flux col: 75, error col.: 76]
+#  Filter #39, RES#19: J0560 - lambda_c=5575.124812
+#       [flux col: 77, error col.: 78]
+#  Filter #40, RES#20: J0570 - lambda_c=5710.332224
+#       [flux col: 79, error col.: 80]
+#  Filter #41, RES#21: J0580 - lambda_c=5811.914552
+#       [flux col: 81, error col.: 82]
+#  Filter #42, RES#22: J0590 - lambda_c=5920.342735
+#       [flux col: 83, error col.: 84]
+#  Filter #43, RES#23: J0600 - lambda_c=6010.455692
+#       [flux col: 85, error col.: 86]
+#  Filter #44, RES#24: J0610 - lambda_c=6117.830061
+#       [flux col: 87, error col.: 88]
+#  Filter #45, RES#25: J0620 - lambda_c=6209.393133
+#       [flux col: 89, error col.: 90]
+#  Filter #46, RES#26: J0630 - lambda_c=6313.017750
+#       [flux col: 91, error col.: 92]
+#  Filter #47, RES#27: J0640 - lambda_c=6410.824614
+#       [flux col: 93, error col.: 94]
+#  Filter #48, RES#28: J0650 - lambda_c=6507.704202
+#       [flux col: 95, error col.: 96]
+#  Filter #49, RES#29: J0660 - lambda_c=6655.450260
+#       [flux col: 97, error col.: 98]
+#  Filter #50, RES#60: uJava - lambda_c=3659.039961
+#       [flux col: 99, error col.: 100]
+#  Filter #51, RES#1: J0378 - lambda_c=3797.007854
+#       [flux col: 101, error col.: 102]
+#  Filter #52, RES#2: J0390 - lambda_c=3904.584276
+#       [flux col: 103, error col.: 104]
+#  Filter #53, RES#3: J0400 - lambda_c=4007.282126
+#       [flux col: 105, error col.: 106]
+#  Filter #54, RES#4: J0410 - lambda_c=4116.435476
+#       [flux col: 107, error col.: 108]
+#  Filter #55, RES#5: J0420 - lambda_c=4210.148521
+#       [flux col: 109, error col.: 110]
+#  Filter #56, RES#6: J0430 - lambda_c=4311.069549
+#       [flux col: 111, error col.: 112]
+#  Filter #57, RES#7: J0440 - lambda_c=4351.704317
+#       [flux col: 113, error col.: 114]
+#  Filter #58, RES#8: J0450 - lambda_c=4515.260775
+#       [flux col: 115, error col.: 116]
+#  Filter #59, RES#9: J0460 - lambda_c=4609.114594
+#       [flux col: 117, error col.: 118]
+#  Template 1: templates/EAZY_v1.0/eazy_v1.0_sed1.dat
+#     1.000000   0.000000   1.000000
+#  Template 2: templates/EAZY_v1.0/eazy_v1.0_sed2.dat
+#     1.000000   0.000000   1.000000
+#  Template 3: templates/EAZY_v1.0/eazy_v1.0_sed3.dat
+#     1.000000   0.000000   1.000000
+#  Template 4: templates/EAZY_v1.0/eazy_v1.0_sed4.dat
+#     1.000000   0.000000   1.000000
+#  Template 5: templates/EAZY_v1.0/eazy_v1.0_sed5.dat
+#     1.000000   0.000000   1.000000
+#  Template 6: templates/EAZY_v1.0/eazy_v1.0_sed6.dat
+#     1.000000   0.000000   1.000000
+# EAZY v1.00 (July 9, 2008)
+# Took 9 seconds.
